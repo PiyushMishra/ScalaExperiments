@@ -11,7 +11,8 @@ object ParameterizeArraysWithType {
      * When you define a variable with val, the variable can’t be reassigned, 
      * but the object to which it refers could potentially still be changed.
      */
-    val greetString = new Array[String](3)
+    val greetString = new Array[String](4)
+
     /**
      * Scala has fewer special cases than java. Arrays are simply instances of
      * classes. When we apply parentheses surrounding one or more values to a
@@ -37,11 +38,15 @@ object ParameterizeArraysWithType {
       print(greetString(i))
     }
 
-    for(i <- 0 to 2) {
-      print(greetString.apply(i))
-    }
+    println("");
 
-    for(i <- 0 to 2) {
+    /**
+     * greetString(0) = "Hello" gets trandformed to
+     * greetString.update(0, "Hello")
+     */
+    greetString.update(3, "!")
+
+    for(i <- 0 to 3) {
       print(greetString apply i)
     }
 
