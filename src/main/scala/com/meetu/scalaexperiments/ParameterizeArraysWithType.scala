@@ -20,7 +20,7 @@ object ParameterizeArraysWithType {
      * named apply on that variable. Therefore greetString(0) gets converted to
      * greetString.apply(0)
      */
-    greetString(0) = "Hello"
+    greetString.update(0, "Hello")
     greetString(1) = ", "
     greetString(2) = "world"
 
@@ -47,7 +47,7 @@ object ParameterizeArraysWithType {
     greetString.update(3, "!")
 
     for(i <- 0 to 3) {
-      print(greetString apply i)
+      print(greetString.apply(i))
     }
 
   }
